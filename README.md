@@ -1,4 +1,4 @@
-# CNN-beta-iVAE
+# CNN-$\beta$-iVAE
 
 This repository contains the code for a lab rotation with the Bernstein Center for Computational Neuroscience (BCCN).
 The model trained here is a CNN adaptation of the paper by [Wu et al. (2021)](https://arxiv.org/abs/2110.05225).
