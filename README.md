@@ -1,4 +1,4 @@
-# Fair(er) Image Generation Using Causal Discovery
+##  rotation title: Fair Image Generation Using Causal Discovery
 
 This repository contains the code for a CNN adaptation of the $\beta$-Intact-VAE from the paper by [Wu et al. (2021)](https://arxiv.org/abs/2110.05225).
 
@@ -8,3 +8,14 @@ Causal inference based on counterfactuals can help answer questions to hypotheti
 
 
 ![image info](./Images/t_age.png)
+
+
+## Run info
+Configure model hyperparameters using config.yml in root directory and train model using:
+
+```
+python train_vae.py
+```
+
+The model will be saved automatically and a copy of the config file will be made in ./Runs/
+

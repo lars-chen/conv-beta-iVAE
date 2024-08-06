@@ -42,8 +42,6 @@ from RES_VAE_Dynamic import VAE
 
 
 parser = argparse.ArgumentParser(description="Training Params")
-# string args
-
 parser.add_argument(
     "--batch_size", "-bs", help="Training batch size", type=int, default=32
 )
@@ -64,15 +62,11 @@ celeb_transform = transforms.Compose(
         transforms.Normalize(0.5, 0.5),
     ]
 )
-
 data_dir = "../../../../../groups/kempter/chen/data"
-# download dataset
 train_dataset = Datasets.CelebA(
     data_dir, transform=celeb_transform, download=False, split="train"
 )
-train_dataset = Subset(
-    dataset=train_dataset, indices=np.arange(16, 162770, 1)
-)  # 162770
+train_dataset = Subset(dataset=train_dataset, indices=np.arange(16, 162770, 1))
 test_dataset = Datasets.CelebA(
     data_dir, transform=celeb_transform, download=False, split="valid"
 )
@@ -117,7 +111,7 @@ elif norm_type == "gn":
 else:
     ValueError("norm_type must be bn or gn")
 
-# Let's see how many Parameters our Model has!
+# check number of parameters
 num_model_params = 0
 for param in vae_net.parameters():
     num_model_params += param.flatten().shape[0]
@@ -129,22 +123,9 @@ print(
 fm_size = image_size // (2 ** len(block_widths))
 print("-The Latent Space Size Is %dx%dx%d!" % (latent_channels, fm_size, fm_size))
 
-if not os.path.isdir(save_dir + "/Runs"):
-    save_dir += "/Runs"
-    os.makedirs(save_dir)
-runs_list = os.listdir(save_dir + "/Runs")
-if runs_list == []:
-    os.makedirs(save_dir + "/Runs" + "/Run_1")
-    save_dir += "/Runs" + "/Run_1"
-else:
-    new_run = "/Run_" + str(
-        np.array([int(run.split("_")[-1]) for run in runs_list]).max() + 1
-    )
-    save_dir += "/Runs" + new_run
-    os.makedirs(save_dir)
-
-shutil.copyfile("config.yml", save_dir + "/config.yml")
+hf.create_save_folder(copy_config=True)
 save_file_name = "model" + "_" + str(image_size)
+
 
 print("Starting from scratch")
 start_epoch = 0

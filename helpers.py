@@ -1,8 +1,8 @@
 import torch.nn.functional as F
-import builtins
 import numpy as np
-import random
 import yaml
+import os
+import shutil
 
 
 ##
@@ -103,3 +103,22 @@ def frange_cycle_linear(n_iter, start=0.0, stop=1.0, n_cycle=4, ratio=0.5):
             v += step
             i += 1
     return L
+
+
+def create_save_folder(copy_config=True):
+    if not os.path.isdir(save_dir + "/Runs"):
+        save_dir += "/Runs"
+        os.makedirs(save_dir)
+    runs_list = os.listdir(save_dir + "/Runs")
+    if runs_list == []:
+        os.makedirs(save_dir + "/Runs" + "/Run_1")
+        save_dir += "/Runs" + "/Run_1"
+    else:
+        new_run = "/Run_" + str(
+            np.array([int(run.split("_")[-1]) for run in runs_list]).max() + 1
+        )
+        save_dir += "/Runs" + new_run
+        os.makedirs(save_dir)
+
+    if copy_config:
+        shutil.copyfile("config.yml", save_dir + "/config.yml")
