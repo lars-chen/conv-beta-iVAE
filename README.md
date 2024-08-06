@@ -1,7 +1,6 @@
 # Fair(er) Image Generation Using Causal Discovery
 
-This repository contains the code for a lab rotation with the Bernstein Center for Computational Neuroscience (BCCN).
-The model trained here is a CNN adaptation of the $\beta$-Intact-VAE from the paper by [Wu et al. (2021)](https://arxiv.org/abs/2110.05225).
+This repository contains the code for a CNN adaptation of the $\beta$-Intact-VAE from the paper by [Wu et al. (2021)](https://arxiv.org/abs/2110.05225).
 
 
 ## Report Abstract
