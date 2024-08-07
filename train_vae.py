@@ -123,7 +123,7 @@ print(
 fm_size = image_size // (2 ** len(block_widths))
 print("-The Latent Space Size Is %dx%dx%d!" % (latent_channels, fm_size, fm_size))
 
-hf.create_save_folder(copy_config=True)
+save_dir = hf.create_run_folder(save_dir=save_dir, copy_config=True)
 save_file_name = "model" + "_" + str(image_size)
 
 

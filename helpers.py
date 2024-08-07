@@ -105,7 +105,7 @@ def frange_cycle_linear(n_iter, start=0.0, stop=1.0, n_cycle=4, ratio=0.5):
     return L
 
 
-def create_save_folder(copy_config=True):
+def create_run_folder(save_dir, copy_config=True):
     if not os.path.isdir(save_dir + "/Runs"):
         save_dir += "/Runs"
         os.makedirs(save_dir)
@@ -122,3 +122,5 @@ def create_save_folder(copy_config=True):
 
     if copy_config:
         shutil.copyfile("config.yml", save_dir + "/config.yml")
+
+    return save_dir
