@@ -19,9 +19,9 @@ deep_model: 0
 
 # Configure which variables to set as treatment and which as covariates
 treatment:
-  Young: 39  # Add index for treatment variable corresponding to CelebA labels
+  Male: 20  # Add index for treatment variable corresponding to CelebA labels
 
-model_labels:
+model_labels: # Add index for covariatess
   5_o_Clock_Shadow: 0
   # Arched_Eyebrows: 1
   # Attractive: 2
@@ -42,7 +42,7 @@ model_labels:
   Gray_Hair: 17
   Heavy_Makeup: 18
   High_Cheekbones: 19
-  Male: 20
+  # Male: 20
   Mouth_Slightly_Open: 21
   Mustache: 22
   Narrow_Eyes: 23
@@ -61,7 +61,7 @@ model_labels:
   Wearing_Lipstick: 36
   # Wearing_Necklace: 37
   # Wearing_Necktie: 38
-  # Young: 39
+  Young: 39
 
 
 
