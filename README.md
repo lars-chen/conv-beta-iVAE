@@ -1,4 +1,4 @@
-##  Fair Image Generation Using Causal Discovery
+##  Fair Image Generation Under Limited Overlap
 
 This repository contains the code for a CNN adaptation of the $\beta$-Intact-VAE from the paper by [Wu et al. (2021)](https://arxiv.org/abs/2110.05225).
 
