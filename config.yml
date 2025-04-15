@@ -7,7 +7,7 @@ save_dir: .
 norm_type: bn
 nepoch: 10
 image_size: 128
-ch_multi: 32
+ch_multi: 20
 num_res_blocks: 1
 gpu_index: 1
 latent_channels: 128
@@ -19,7 +19,8 @@ deep_model: 0
 
 # Configure which variables to set as treatment and which as covariates
 treatment:
-  Male: 20  # Add index for treatment variable corresponding to CelebA labels
+  Young: 39 
+  # Male: 20  # Add index for treatment variable corresponding to CelebA labels
 
 model_labels: # Add index for covariatess
   5_o_Clock_Shadow: 0
@@ -42,14 +43,14 @@ model_labels: # Add index for covariatess
   Gray_Hair: 17
   Heavy_Makeup: 18
   High_Cheekbones: 19
-  # Male: 20
+  Male: 20
   Mouth_Slightly_Open: 21
   Mustache: 22
   Narrow_Eyes: 23
   No_Beard: 24
   Oval_Face: 25
   Pale_Skin: 26
-  Pointy_Nose: 27
+  # Pointy_Nose: 27
   Receding_Hairline: 28
   Rosy_Cheeks: 29
   Sideburns: 30
@@ -61,7 +62,7 @@ model_labels: # Add index for covariatess
   Wearing_Lipstick: 36
   # Wearing_Necklace: 37
   # Wearing_Necktie: 38
-  Young: 39
+  # Young: 39
 
 
 
